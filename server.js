@@ -9,7 +9,7 @@ const morgan = require("morgan")
 
 //DB CONNECTION
 const mongoose = require('mongoose');
-mongoose.connect(MONGODB_URI)
+mongoose.connect( process.env.MONGODB_URI || "YOUR CURRENT LOCALHOST DB CONNECTION STRING HERE" );
 mongoose.connection
   .on("open", () => console.log("Your are connected to mongoose ✅"))
   .on("close", () => console.log("Your are disconnected from mongoose"))
@@ -32,4 +32,5 @@ app.get("/", (req, res) => {
 
 
 //LISTENER
-app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
+app.listen(process.env.PORT || 4000);
+//app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));

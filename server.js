@@ -18,9 +18,10 @@ mongoose.connection
 
 //MIDDLEWARE
 app.use(express.json());
-app.use('/plants', plantController)
 app.use(cors());
 app.use(morgan("dev"));
+app.use('/plants', plantController)
+
 
 
 

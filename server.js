@@ -1,6 +1,6 @@
 //DEPENDENCIES
 require('dotenv').config()
-const {PORT, MONGODB_URI}=process.env
+//const {PORT, MONGODB_URI}=process.env
 const express = require("express");
 const app=express()
 const plantController=require('./controllers/plant-controller')
@@ -32,5 +32,8 @@ app.get("/", (req, res) => {
 
 
 //LISTENER
-app.listen(process.env.PORT || 4000);
+app.listen(process.env.PORT || 4000, );
+//app.listen(process.env.PORT || 3000, function(){
+//     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+//   });
 //app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));

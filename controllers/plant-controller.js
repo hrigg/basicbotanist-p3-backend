@@ -43,7 +43,7 @@ router.delete("/:id", async (req, res) => {
 router.put("/:id", async (req, res) => {
 	console.log(req.body)
 	try{
-        await Plants.findByIdAndUpdate(req.params.id, req.body, {new:true})
+       res.json(await Plants.findByIdAndUpdate(req.params.id, req.body, {new:true}))
     }catch(err){
         res.status(400).json(err)
     }

@@ -4,6 +4,7 @@ require('dotenv').config()
 const express = require("express");
 const app=express()
 const plantController=require('./controllers/plant-controller')
+const commentController = require('./controllers/comment-controller')
 const cors = require("cors")
 const morgan = require("morgan")
 
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 app.use('/plants', plantController)
+app.use('/comments',commentController)
 
 
 
